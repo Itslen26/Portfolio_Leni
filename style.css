@@ -1,0 +1,135 @@
+/* =====================================================
+   PORTFOLIO - Leni Nur Aeni
+   Layout mengikuti contoh dosen.
+   Semua ID & class diawali "leni_" (kombinasi nama mahasiswa).
+   ===================================================== */
+
+:root {
+  --leni_blue: #1f5fd6;
+  --leni_blue_soft: #eef4ff;
+  --leni_text: #111a33;
+  --leni_muted: #4b556d;
+  --leni_border: #e2e9f6;
+  --leni_navy: #0c1a3f;
+  --leni_head: 'Plus Jakarta Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+  --leni_body: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; -webkit-text-size-adjust: 100%; }
+body { font-family: var(--leni_body); font-size: 1rem; line-height: 1.6; color: var(--leni_text); background: #fff; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: .15rem solid var(--leni_blue); outline-offset: .2rem; border-radius: .3rem; }
+
+.leni_container { width: 100%; max-width: 70rem; margin: 0 auto; padding-inline: 1.5rem; }
+.leni_section { padding-block: 2.2rem 0; }
+
+/* ---------- header ---------- */
+#leni_header { position: sticky; top: 0; z-index: 50; background: #fff; box-shadow: 0 1px 0 var(--leni_border); }
+.leni_header_inner { display: flex; align-items: center; height: 4rem; }
+.leni_logo { display: flex; align-items: center; gap: .5rem; font-family: var(--leni_head); font-weight: 800; font-size: 1.15rem; white-space: nowrap; margin-right: auto; }
+.leni_logo b { color: var(--leni_blue); }
+.leni_logo_icon { color: var(--leni_blue); font-family: Consolas, monospace; font-weight: 800; font-size: 1.35rem; }
+#leni_menu { display: flex; gap: 2rem; margin-right: 6%; }
+.leni_menu_link { font-size: .88rem; font-weight: 600; color: var(--leni_text); transition: color .2s; }
+.leni_menu_link:hover, .leni_menu_link.leni_active { color: var(--leni_blue); }
+.leni_burger { display: none; flex-direction: column; gap: .28rem; width: 2.5rem; height: 2.5rem; align-items: center; justify-content: center; background: none; border: 1px solid var(--leni_border); border-radius: .5rem; }
+.leni_burger span { display: block; width: 1.1rem; height: .13rem; background: currentColor; border-radius: .1rem; }
+
+/* ---------- buttons ---------- */
+.leni_btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .6rem 1.4rem; border-radius: .4rem; font-size: .85rem; font-weight: 600; border: .125rem solid var(--leni_blue); transition: background .2s, color .2s; }
+.leni_btn_primary { background: var(--leni_blue); color: #fff; }
+.leni_btn_primary:hover { background: #174ab0; border-color: #174ab0; }
+.leni_btn_outline { background: #fff; color: var(--leni_blue); }
+.leni_btn_outline:hover { background: var(--leni_blue); color: #fff; }
+.leni_ico { display: inline-block; width: 1.1em; height: 1.1em; fill: currentColor; flex: none; }
+.leni_ico_s { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+
+/* ---------- hero ---------- */
+.leni_hero { background: linear-gradient(90deg, #f3f7ff 0%, #e3ecfd 50%, #c6d9fb 100%); overflow: hidden; }
+.leni_hero_inner { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 1rem; padding-block: 1.5rem; }
+.leni_hello { font-size: 1.1rem; color: var(--leni_text); }
+.leni_name { font-family: var(--leni_head); font-size: clamp(2.3rem, 5vw, 3.4rem); line-height: 1.1; font-weight: 800; margin: .1rem 0 .4rem; }
+.leni_name span { color: var(--leni_blue); }
+.leni_role { font-size: 1.1rem; color: var(--leni_muted); margin-bottom: .9rem; }
+.leni_intro { max-width: 26rem; font-size: .92rem; color: var(--leni_text); margin-bottom: 1.3rem; }
+.leni_hero_buttons { display: flex; flex-wrap: wrap; gap: .8rem; }
+.leni_hero_art { min-width: 0; }
+.leni_hero_image {
+  width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%, #000 90%, transparent 100%), linear-gradient(180deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 0, #000 22%, #000 90%, transparent 100%), linear-gradient(180deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+  mask-composite: intersect;
+}
+
+/* ---------- about ---------- */
+.leni_about_inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+.leni_title, .leni_subtitle { font-family: var(--leni_head); font-weight: 800; line-height: 1.2; position: relative; padding-bottom: .55rem; margin-bottom: 1rem; }
+.leni_title { font-size: 1.6rem; }
+.leni_subtitle { font-size: 1.15rem; margin-bottom: .8rem; }
+.leni_title::after, .leni_subtitle::after { content: ""; position: absolute; left: 0; bottom: 0; width: 1.8rem; height: .18rem; background: var(--leni_blue); border-radius: .1rem; }
+.leni_about_desc { max-width: 28rem; font-size: .95rem; margin-bottom: 1.1rem; }
+.leni_info_list { display: flex; flex-wrap: wrap; gap: .6rem 1.8rem; }
+.leni_info_list li { display: flex; align-items: center; gap: .5rem; font-size: .82rem; color: var(--leni_muted); }
+.leni_info_list .leni_ico { color: var(--leni_blue); width: 1.2rem; height: 1.2rem; }
+.leni_about_photo { justify-self: end; width: 100%; max-width: 15rem; }
+.leni_about_photo img { width: 100%; height: auto; aspect-ratio: 900 / 696; object-fit: cover; border-radius: .4rem; box-shadow: 0 .4rem 1.2rem rgba(20, 50, 120, .15); }
+
+/* ---------- skills ---------- */
+.leni_skill_grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; }
+.leni_skill_item { display: flex; align-items: center; justify-content: flex-start; gap: .9rem; padding: .7rem 1.4rem; background: var(--leni_blue_soft); border: 1px solid var(--leni_border); border-radius: .4rem; font-size: .82rem; font-weight: 500; color: var(--leni_muted); min-width: 0; }
+.leni_skill_svg { width: 1.7rem; height: 1.7rem; flex: none; }
+
+/* ---------- projects ---------- */
+.leni_projects { padding-bottom: 2.2rem; }
+.leni_project_grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; }
+.leni_card { background: #fff; border: 1px solid var(--leni_border); border-radius: .4rem; overflow: hidden; box-shadow: 0 .1rem .4rem rgba(20, 50, 120, .08); display: flex; flex-direction: column; }
+.leni_card_img { aspect-ratio: 426 / 138; overflow: hidden; background: var(--leni_blue_soft); }
+.leni_card_img img { width: 100%; height: 100%; object-fit: cover; }
+.leni_card_body { padding: .6rem .8rem .8rem; display: flex; flex-direction: column; gap: .15rem; align-items: flex-start; }
+.leni_card_body h3 { font-family: var(--leni_head); font-size: .85rem; line-height: 1.3; }
+.leni_card_body p { color: var(--leni_muted); font-size: .72rem; line-height: 1.4; }
+.leni_card_link { margin-top: .35rem; font-weight: 700; font-size: .72rem; color: var(--leni_blue); }
+.leni_card_link:hover { text-decoration: underline; }
+
+/* ---------- footer ---------- */
+.leni_footer { background: var(--leni_navy); color: #fff; padding-block: 1.1rem .8rem; scroll-margin-top: 4rem; }
+.leni_footer_top { display: flex; align-items: center; gap: 1.6rem; padding-bottom: .8rem; border-bottom: 1px solid rgba(255, 255, 255, .18); }
+.leni_footer_brand strong { display: block; font-family: var(--leni_head); font-size: 1rem; }
+.leni_footer_brand strong span { color: #5b9bff; }
+.leni_footer_brand small { font-size: .68rem; color: #c3cde6; }
+.leni_footer_divider { align-self: stretch; width: 1px; background: rgba(255, 255, 255, .25); }
+.leni_footer_contact { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.6rem; font-size: .72rem; color: #dfe6f7; }
+.leni_footer_contact li { display: flex; align-items: center; gap: .45rem; }
+.leni_copyright { font-size: .68rem; color: #c3cde6; margin-top: .7rem; }
+
+/* ---------- tablet & HP ---------- */
+@media (max-width: 960px) {
+  .leni_skill_grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .leni_project_grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .leni_burger { display: flex; }
+  #leni_menu { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; margin: 0; padding: .4rem 1.5rem 1rem; background: #fff; border-bottom: 1px solid var(--leni_border); box-shadow: 0 1rem 1.5rem rgba(20, 50, 120, .1); display: none; }
+  #leni_menu.leni_open { display: flex; }
+  .leni_menu_link { padding: .75rem 0; font-size: 1rem; }
+  .leni_hero_inner { grid-template-columns: minmax(0, 1fr); padding-block: 1.8rem 0; }
+  .leni_hero_image { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 25%); mask-image: linear-gradient(180deg, transparent 0, #000 25%); }
+  .leni_about_inner { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .leni_about_photo { justify-self: start; max-width: 14rem; }
+  .leni_footer_top { flex-direction: column; align-items: flex-start; gap: .9rem; }
+  .leni_footer_divider { display: none; }
+}
+@media (max-width: 520px) {
+  .leni_skill_grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .leni_project_grid { grid-template-columns: minmax(0, 1fr); }
+  .leni_hero_buttons .leni_btn { flex: 1 1 8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
